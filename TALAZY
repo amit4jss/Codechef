@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main() 
+{ int t,n,b,m;
+cin>>t;
+while(t--)
+{cin>>n>>b>>m;
+int time=0;
+{  while(n!=0)
+if(n%2==0)
+{
+   time=time+m*n/2; 
+}
+else
+{
+    time=time+m*(n+1)/2;
+}
+n=n/2;
+m=m*2;
+if(n!=0)
+{
+    time=time+b;
+}
+}
+cout<<time;
+}
+
+return 0;
+}
