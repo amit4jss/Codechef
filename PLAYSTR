@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+		long long x,y,k;
+	int t;
+	cin>>t;
+	for(int i=0;i<t;i++)
+	{
+	    cin>>x>>y>>k;
+	    long long sum = x+y;
+	    sum = sum/k; 
+	    if(sum%2==0)
+	    {
+	        cout<<"Chef"<<endl;
+	    }
+	    else
+	    {
+	        cout<<"Paja"<<endl;
+	    }
+	}
+	return 0;
+}
