@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main() 
+{ int t,n,a,b;
+cin>>t;
+while(t--)
+{
+cin>>n>>a>>b;
+int arr[n],counta=0,countb=0;
+for(int i=0;i<n;i++)
+{
+    cin>>arr[i];
+    if(arr[i]==a)
+    {
+        counta++;
+    }
+    if(arr[i]==b)
+    {
+        countb++;
+    }
+    
+}
+float p;
+p=(float(counta)/n)*(float(countb)/n);
+
+cout<<p<<endl;
+}
+
+return 0;
+}
