@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+
+int sumo(int x)
+{ 
+int sum=0;
+ while(x!=0)
+ {
+    sum=sum+x%10;
+    x/=10;
+ }
+ return sum;
+}
+
+int main() 
+{int t,n;
+cin>>t;
+while(t--)
+{ 
+cin>>n;
+int arr[n];
+int maxsum=0;
+for(int i=0;i<n;i++)
+{
+cin>>arr[i];
+}
+
+int sum=0;
+for(int i=0;i<n-1;i++)
+{
+   for(int j=i+1;j<n;j++)
+  { 
+    int mul=arr[j]*arr[i];
+    int max=sumo(mul);
+    if(max>maxsum)
+    {
+        maxsum=max;
+    }
+  }
+
+}
+cout<<maxsum<<endl;
+}
+return 0;
+}
