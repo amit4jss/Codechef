@@ -4,37 +4,36 @@ int main()
 { int t,n;
 cin>>t;
 while(t--)
-{ cin>>n;
-int arr[n];
-for(int i=0;i<n;i++)
-{
-    cin>>arr[i];
-}
-int min=0;
-int temp=arr[0];
-int count=1;
-for(int i=1;i<=(n-5);i++)
-{
-    for(int j=i;j<5+i;j++)
-    {
-        min=arr[j];
-        for(int k=j+1;k<=5+j;k++)
+{cin>>n;
+ int arr[n];
+ for(int i=0;i<n;i++)
+ {
+     cin>>arr[i];
+ }
+ int max=arr[0];
+ int count=1;
+ for(int i=1;i<n;i++)
+ {
+     int j=i-1;
+     int d=5,status=1;
+     while(j>=0&&d>0)
+     {  
+        if(arr[i]>=arr[j])
         {
-            if(min>arr[k])
-            {
-                min=arr[k];
-            }
-            
+           status=0;
+           break;
         }
-        if(min<temp)
-        {  temp=min;
-            count++;
-        }
-        
-        
-    }
-}
- cout<<count-1<<endl;   
+        d--;
+        j--;
+     }
+     if(status)
+     {
+         count++;
+     }
+ }
+ 
+    
+    cout<<count<<endl;
 }
 
 return 0;
